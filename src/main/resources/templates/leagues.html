@@ -29,8 +29,11 @@
         <tr th:each="league : ${listLeagues}">
             <td th:text="${league.name}"></td>
             <td th:text="${league.country}"></td>
-            <td><a th:href="@{/view/league/update/{id}(id=${league.id})}" class="btn btn-primary">Update</a>
-                <a th:href="@{/view/league/delete/{id}(id=${league.id})}" class="btn btn-danger">Delete</a>
+            <td class="d-flex flex-row">
+                <a th:href="@{/view/league/update/{id}(id=${league.id})}" class="btn btn-primary mr-1">Update</a>
+                <form action="#" th:action="@{/view/league/delete/{id}(id=${league.id})}" th:method="delete">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
             </td>
         </tr>
         </tbody>

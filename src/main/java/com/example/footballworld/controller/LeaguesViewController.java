@@ -41,7 +41,7 @@ public class LeaguesViewController {
         return "update_league";
     }
 
-    @GetMapping("/league/delete/{id}")
+    @DeleteMapping("/league/delete/{id}")
     public String deleteLeague(@PathVariable Long id) {
         this.leagueService.delete(id);
         return "redirect:/view";
